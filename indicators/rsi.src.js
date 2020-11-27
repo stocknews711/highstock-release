@@ -96,6 +96,9 @@
                     }
 
                     // Average for first n-1 points:
+                    // todo: should avoid get the average gain / loss because it will cause the accurate rate drop when caclulation the continue average
+                    // one of the example is using https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/stock/indicators/rsi/ as demo
+                    // when you remove some data for example : data.slice(480) before set into the series.data, the result will be different.
                     avgGain = toFixed(gain / (period - 1), decimals);
                     avgLoss = toFixed(loss / (period - 1), decimals);
 
